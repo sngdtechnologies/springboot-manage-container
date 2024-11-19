@@ -8,7 +8,6 @@ import java.util.Optional;
 
 @Repository
 public interface ConteneurRepository extends JpaRepository<Conteneur, Long> {
-    
-    Optional<Conteneur> findOneByNumero(String numero);
-    Optional<Conteneur> findOneByNumeroAndSortieIsFalse(String numero);
+    boolean existsByNumeroAndSortieFalse(String numero);
+    Optional<Conteneur> findByNumeroAndSortieFalse(String numero);
 }
